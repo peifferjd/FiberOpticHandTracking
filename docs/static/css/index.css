@@ -1,0 +1,153 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.teaser video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.publication-title,
+.publication-authors,
+.publication-venue-line {
+  font-family: 'Google Sans', sans-serif;
+}
+
+/* Slightly smaller than Bulma's is-1 so the title fits on two lines in the 960px column. */
+@media screen and (min-width: 1024px) {
+  .title.is-1.publication-title {
+    font-size: 2.8rem;
+  }
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.publication-venue-line {
+  margin-top: 0.75rem;
+}
+
+.publication-venue {
+  color: #555;
+  font-weight: bold;
+}
+
+.author-block {
+  display: inline-block;
+  margin: 0 0.15rem;
+}
+
+/* Key numbers band */
+.stat-row {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a73b8;
+  line-height: 1.2;
+}
+
+.stat-label {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Figures and videos in content sections */
+.content .figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1rem auto 0.5rem;
+  border-radius: 6px;
+}
+
+.content .caption {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.section .title.is-3 {
+  margin-top: 2rem;
+}
+
+.results-table th,
+.results-table td {
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.content .figure-medium {
+  max-width: 80%;
+}
+
+.content .figure-narrow {
+  max-width: 55%;
+}
+
+@media screen and (max-width: 768px) {
+  .content .figure-medium,
+  .content .figure-narrow {
+    max-width: 100%;
+  }
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+  width: 100%;
+}
+
+/* Videos have different aspect ratios; letterbox them into a uniform frame. */
+.results-carousel .item video {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #fff;
+}

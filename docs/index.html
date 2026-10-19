@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A multi-core fiber optic shape-sensing glove for occlusion-robust, drift-free, full hand pose tracking during dexterous manipulation.">
+  <meta name="keywords" content="Hand Tracking, Fiber Bragg Grating, Shape Sensing, Sensorized Glove, Dexterous Manipulation, Teleoperation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiber Optic Sensing Glove for High Performance Dexterous Manipulation Capture</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Fiber Optic Sensing Glove for High Performance Dexterous Manipulation Capture</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jdpeiffer.com">J.D. Peiffer</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/taylor-niehues-733a913a">Taylor Niehues</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/liguan0/">Li Guan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/ziyi-kou-087200176">Ziyi Kou</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/ergys-ristani-373790113">Ergys Ristani</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Meta Reality Labs</span>
+            <span class="author-block"><sup>2</sup>Northwestern University</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Work done during an internship at Meta</span>
+          </div>
+
+          <div class="is-size-5 publication-venue-line">
+            <span class="publication-venue">IROS 2026 &middot; Pittsburgh</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link. TODO: add once published. -->
+              <!-- <span class="link-block">
+                <a href="TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2608.24572"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Poster Link. -->
+              <span class="link-block">
+                <a href="./static/poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-image"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <!-- Video Link. TODO: add supplementary video link. -->
+              <!-- <span class="link-block">
+                <a href="TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/mug.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Our <span class="dnerf">fiber optic sensing glove</span> (blue) keeps tracking whole-hand pose through
+        occlusions that break marker-based motion capture (green) &mdash; with &lt;5&nbsp;mm fingertip error and no
+        drift or magnetic interference.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-teleop">
+          <video poster="" id="teleop-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teleop.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-corn">
+          <video poster="" id="corn-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/corn_manipulation.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cutting">
+          <video poster="" id="cutting-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cutting.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mm-cup">
+          <video poster="" id="mm-cup-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mm_cup.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered stat-row">
+        <div class="column">
+          <p class="stat-value">4.9&nbsp;mm</p>
+          <p class="stat-label">fingertip error during manipulation</p>
+        </div>
+        <div class="column">
+          <p class="stat-value">60&nbsp;Hz</p>
+          <p class="stat-label">real-time registration + IK</p>
+        </div>
+        <div class="column">
+          <p class="stat-value">34%</p>
+          <p class="stat-label">of mocap frames occluded &mdash; the glove keeps tracking</p>
+        </div>
+        <div class="column">
+          <p class="stat-value">~2&nbsp;hours</p>
+          <p class="stat-label">5-subject dexterous manipulation dataset</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Capturing hand pose during dexterous manipulation remains difficult: vision-based methods degrade under
+            occlusion and challenging lighting, while sensorized gloves, though occlusion-free, are prone to drift and
+            magnetic interference and rarely match motion-capture accuracy.
+          </p>
+          <p>
+            We introduce a fiber optic sensing glove for full hand pose tracking that targets these failure modes,
+            using <strong>multi-core shape-sensing fibers</strong> that capture each fiber&rsquo;s full 3D shape rather
+            than curvature alone. A novel pipeline registers each reconstructed fiber shape to a common hand reference
+            frame, and a new inverse-kinematics solver reconstructs full hand pose at 60&nbsp;Hz using curve
+            constraints.
+          </p>
+          <p>
+            Benchmarked on a 2-hour dataset of dexterous object manipulation tasks across 5 subjects, the glove
+            achieves 7.2&nbsp;mm mean fingertip position error against motion capture ground truth, reduced to
+            <strong>4.9&nbsp;mm</strong> by a one-time factory calibration of the fiber routing hub that transfers
+            across users and sessions. These capabilities enable high-fidelity data capture and bimanual virtual
+            teleoperation &mdash; both essential to advancing the robotics field.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Hardware. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Glove Design</h2>
+          <p>
+            Each finger is instrumented with a 125&nbsp;&micro;m multi-core optical fiber containing three sensing
+            cores with 26 FBGs each, spaced every 1&nbsp;cm. Each FBG reflects a wavelength that shifts with local
+            strain; combining the three cores gives local curvature and bending direction, which are integrated into a
+            3D fiber shape at 1&nbsp;mm resolution and 60&nbsp;Hz. Because curvature comes from <em>differential</em>
+            strain between cores, common-mode effects such as temperature largely cancel.
+          </p>
+          <p>
+            Fibers are fixed at a 3D-printed fixture near the fingernail but otherwise slide freely through stitched
+            dorsal fabric loops, minimizing interference with natural motion. On the back of the hand, a
+            <strong>routing hub</strong> guides each fiber through a tunnel of known geometry to a shared outlet; these
+            tunnels are what let us register every fiber into a common reference frame.
+          </p>
+          <img src="./static/images/closeup.webp" alt="Sensing glove with routing hub, routing tunnels, optic fibers, distal fixtures and fabric routing loops"
+               class="figure figure-medium" loading="lazy" width="1362" height="1044">
+        </div>
+      </div>
+    </div>
+    <!--/ Hardware. -->
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Hand Pose Reconstruction</h2>
+          <p>
+            <strong>Shape registration.</strong> Each fiber shape is first reconstructed in its own local frame. We
+            slide a window along the fiber to find the segment whose curvature best matches the routing-hub tunnel for
+            that digit, then solve a closed-form Procrustes alignment to place the fiber in the hub frame. This runs
+            independently for every fiber at every time step.
+          </p>
+          <p>
+            <strong>Inverse kinematics.</strong> We fit a scaled Momentum hand model (22 joint angles plus wrist pose)
+            to the registered fibers using fingertip position and distal-direction constraints, point-to-spline
+            constraints along each finger, dorsum constraints tied to the routing hub, temporal regularization, and
+            joint limits, solved with a Gauss&ndash;Newton optimizer. Registration takes ~5&nbsp;ms and IK
+            ~0.1&nbsp;ms per sample &mdash; well within the 16.7&nbsp;ms budget for 60&nbsp;Hz.
+          </p>
+          <img src="./static/images/registration_ik.webp" alt="Shape registration of fibers from local frame to routing hub frame, followed by inverse kinematics with spline and distal direction constraints"
+               class="figure" loading="lazy" width="2000" height="601">
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+    <!-- Accuracy. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Tracking Accuracy</h2>
+          <p>
+            Five participants each completed two sessions (with a full doff-and-don in between) of range-of-motion
+            poses and functional manipulation tasks: buzz wire, box and blocks, cup stacking, in-hand object rotation,
+            the 9-Hole Peg Test, and object squeezing. Ground truth came from 20 OptiTrack cameras and markers on the
+            glove. We report Mean Keypoint Position Error over 21 hand landmarks (MKPE) and over fingertips only
+            (F.MKPE).
+          </p>
+          <img src="./static/images/traces.webp" alt="Index and thumb fingertip position traces for mocap and glove, with the glove continuing to track during marker occlusion"
+               class="figure" loading="lazy" width="2000" height="986">
+          <p class="caption">
+            Fingertip traces during the 9-Hole Peg Test (left) and in-hand object rotation (right). The glove keeps
+            tracking through a period of mocap marker occlusion (grey).
+          </p>
+
+          <div class="table-container">
+            <table class="table is-fullwidth is-hoverable results-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Metric</th>
+                  <th colspan="2" class="has-text-centered">Fiber-to-Marker Residual (mm)</th>
+                  <th colspan="2" class="has-text-centered">MKPE (mm)</th>
+                  <th colspan="2" class="has-text-centered">F.MKPE (mm)</th>
+                </tr>
+                <tr>
+                  <th class="has-text-centered">Range of Motion</th>
+                  <th class="has-text-centered">Manipulation</th>
+                  <th class="has-text-centered">Range of Motion</th>
+                  <th class="has-text-centered">Manipulation</th>
+                  <th class="has-text-centered">Range of Motion</th>
+                  <th class="has-text-centered">Manipulation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Base</td>
+                  <td class="has-text-centered">3.3</td><td class="has-text-centered">3.4</td>
+                  <td class="has-text-centered">5.3</td><td class="has-text-centered">5.9</td>
+                  <td class="has-text-centered">6.5</td><td class="has-text-centered">7.2</td>
+                </tr>
+                <tr>
+                  <td>Tunnel Aligned</td>
+                  <td class="has-text-centered"><strong>1.7</strong></td><td class="has-text-centered"><strong>2.1</strong></td>
+                  <td class="has-text-centered"><strong>4.4</strong></td><td class="has-text-centered"><strong>4.4</strong></td>
+                  <td class="has-text-centered"><strong>4.5</strong></td><td class="has-text-centered"><strong>4.9</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Accuracy. -->
+
+    <!-- Calibration. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">One-Time Tunnel Alignment</h2>
+          <p>
+            The dominant source of residual error is fiber-to-hub registration, and it is largely a consistent spatial
+            bias. A single rigid transform applied to the routing-hub tunnel templates corrects it, cutting fingertip
+            error by about 2&nbsp;mm and reducing error for every subject and session. In a preliminary analysis, an
+            alignment estimated from a <em>different</em> participant and session performed within 0.1&nbsp;mm of a
+            matched one, so it can be treated as a one-time factory calibration.
+          </p>
+          <div class="columns is-vcentered">
+            <div class="column is-7">
+              <video class="figure" autoplay controls muted loop playsinline preload="metadata">
+                <source src="./static/videos/calibration.mp4" type="video/mp4">
+              </video>
+              <p class="caption">
+                Ground truth (green), original registration (red), and aligned registration (blue).
+              </p>
+            </div>
+            <div class="column is-5">
+              <img src="./static/images/histogram.png" alt="Histogram of fingertip landmark errors per subject and session before and after tunnel alignment"
+                   class="figure" loading="lazy" width="1198" height="1360">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Calibration. -->
+
+    <!-- Occlusion. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Robust to Occlusion</h2>
+          <p>
+            During manipulation, 34% of mocap frames had at least one marker occluded &mdash; and these poses are not
+            extreme: simply grasping a coffee mug handle is enough to break marker-based tracking. Because the glove
+            senses shape directly, it produces consistent hand poses through both self-occlusion and object occlusion.
+          </p>
+          <img src="./static/images/occlusion.webp" alt="Glove, glove reconstruction, and marker-based mocap under self occlusion and object occlusion"
+               class="figure figure-narrow" loading="lazy" width="1346" height="1542">
+        </div>
+      </div>
+    </div>
+    <!--/ Occlusion. -->
+
+    <!-- Teleoperation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Real-Time Bimanual Teleoperation</h2>
+          <p>
+            Attaching a 6-DoF tracker to each routing hub places both hands in a shared world frame. Combined in real
+            time with the glove's finger pose estimates, this lets a user open and close a virtual jar in VR with
+            minimal effort &mdash; a step toward retargeting the glove for robotic teleoperation and collecting
+            contact-rich demonstrations for robot learning.
+          </p>
+          <video class="figure" autoplay controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/teleop.mp4" type="video/mp4">
+          </video>
+          <p class="caption">
+            Real hands (top left), glove reconstruction (bottom left), and the user opening a jar in VR (right).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Teleoperation. -->
+
+    <!-- BibTeX. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre><code>@misc{peiffer_fiber_2026,
+  title     = {Fiber {Optic} {Sensing} {Glove} for {High} {Performance} {Dexterous} {Manipulation} {Capture}},
+  author    = {Peiffer, J. D. and Niehues, Taylor and Guan, Li and Kou, Ziyi and Ristani, Ergys},
+  year      = {2026},
+  month     = aug,
+  publisher = {arXiv},
+  doi       = {10.48550/arXiv.2608.24572},
+  url       = {http://arxiv.org/abs/2608.24572},
+  note      = {arXiv:2608.24572 [cs.RO]}
+}</code></pre>
+      </div>
+    </div>
+    <!--/ BibTeX. -->
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="./static/poster.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Thanks to the Nerfies paper for this website template, which is available under the <a rel="license"
+                                                href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a> at <a href="https://github.com/nerfies/nerfies.github.io">this link</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
